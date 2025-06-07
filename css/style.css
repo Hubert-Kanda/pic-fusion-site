@@ -1,0 +1,1190 @@
+/* Variables CSS pour les couleurs et polices */
+:root {
+  --primary-color: #003366; /* Bleu Marine - Dominant 1 */
+  --secondary-color: #00509e; /* Bleu Nuit - Dominant 2 */
+  --accent-color: #ff6f61; /* Corail, pour les accents et les CTA */
+  --text-color: #333333; /* Texte sombre et lisible */
+  --light-bg: #f8f9fa; /* Arrière-plan clair pour les sections alternées */
+  --white-color: #ffffff;
+  --dark-text-on-dark-bg: #e0e0e0; /* Texte clair sur fond sombre */
+  --dark-color: #0d2a4f; /* Un bleu nuit encore plus foncé pour le footer */
+
+  /* Nouvelles polices */
+  --font-heading: "Oswald", sans-serif; /* Pour les titres, impactant */
+  --font-body: "Lato", sans-serif; /* Pour le corps du texte, très lisible */
+
+  --border-radius: 12px; /* Légèrement plus grand pour un look moderne */
+  --transition-speed: 0.4s ease-in-out; /* Transitions plus douces */
+  --global-padding-x: 20px; /* Nouveau : Padding horizontal global */
+}
+
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--white-color);
+  overflow-x: hidden;
+  font-size: 1.15em;
+}
+
+/* Conteneur général pour centrer le contenu et gérer les marges latérales */
+.container {
+  max-width: 1400px; /* Agrandir le conteneur pour mieux utiliser l'espace */
+  margin: 0 auto;
+  padding: 0 var(--global-padding-x); /* Utilise la variable pour le padding horizontal */
+}
+
+/* Sections communes */
+.section-padding {
+  padding: 100px 0;
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3em; /* Encore plus grande pour les titres de section */
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Légèrement plus d'espacement */
+}
+
+.section-title i {
+  margin-right: 20px;
+  color: var(--accent-color);
+  font-size: 1.3em;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.35em; /* Taille plus grande pour les descriptions */
+  color: var(--text-color);
+  margin-bottom: 80px;
+  max-width: 950px; /* Élargir le max-width */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6; /* Plus de lisibilité */
+}
+
+/* --- Boutons --- */
+.btn {
+  display: inline-block;
+  padding: 16px 38px; /* Padding généreux */
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all var(--transition-speed);
+  font-family: var(--font-heading);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em; /* Taille du texte des boutons */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre par défaut */
+}
+
+.btn.primary {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border: 2px solid var(--accent-color);
+}
+
+.btn.primary:hover {
+  background-color: #0704a3; /* Couleur d'accent légèrement plus sombre */
+  transform: translateY(-7px) scale(1.02); /* Plus de déplacement et léger zoom */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn.secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.btn.large {
+  padding: 20px 45px;
+  font-size: 1.5em; /* Encore plus grand pour le bouton de téléchargement */
+}
+
+.btn i {
+  margin-right: 12px;
+}
+
+/* --- Barre de navigation (Navbar) --- */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 40px; /* Hauteur fixe pour le conteneur du logo, permettant à l'image de s'y adapter */
+  /* Ajustez cette hauteur si votre navbar est plus haute ou plus basse */
+}
+
+.navbar .logo-image {
+  height: 200%; /* L'image occupe 100% de la hauteur du conteneur .logo */
+  width: auto; /* La largeur s'ajuste pour maintenir les proportions */
+  margin-right: 100px; /* Espace entre l'image et le texte */
+  object-fit: contain; /* S'assure que l'image est entièrement visible */
+  display: block; /* Élimine tout espace supplémentaire sous l'image */
+}
+
+.navbar .logo-text {
+  font-family: var(--font-heading);
+  font-size: 2.6em; /* Taille du texte "Pic Fusion" */
+  color: var(--white-color);
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
+}
+
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 45px; /* Plus d'espace entre les liens */
+}
+
+.nav-links a {
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2em; /* Taille des liens de navigation */
+  transition: color var(--transition-speed), transform 0.3s ease-out;
+  text-transform: uppercase;
+  position: relative; /* Pour l'effet de soulignement */
+}
+
+.nav-links a::after {
+  /* Soulignement animé */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: var(--accent-color);
+  transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active-link::after {
+  /* Ajoutez une classe active-link si vous gérez l'état actif */
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.nav-links .btn-nav {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  padding: 12px 28px; /* Plus de padding pour ce bouton */
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed),
+    transform var(--transition-speed);
+  box-shadow: none; /* Pas d'ombre pour le bouton nav */
+}
+
+.nav-links .btn-nav:hover {
+  background-color: #e65c50;
+  transform: translateY(-3px); /* Léger mouvement */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2.5em;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/* --- Section Hero --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.hero-bg-left,
+.hero-bg-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-bg-left {
+  left: 0;
+}
+
+.hero-bg-right {
+  right: 0;
+}
+
+.hero-bg-left img,
+.hero-bg-right video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.25); /* Encore plus assombri pour un contraste élevé */
+  transform: scale(
+    1.05
+  ); /* Léger zoom pour remplir l'espace et donner du dynamisme */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 50px 70px; /* Plus de padding interne */
+  background-color: rgba(0, 0, 0, 0.7); /* Fond plus opaque pour le texte */
+  border-radius: var(--border-radius);
+  max-width: 1000px; /* Élargir le max-width du contenu */
+  margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Ombre plus intense */
+  animation: fadeInZoom 1.5s ease-out forwards; /* Animation d'apparition */
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: 5em; /* Titre du héros très grand */
+  margin-bottom: 25px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre portée pour la lisibilité */
+}
+
+.hero-text h1 i {
+  margin-right: 20px;
+  color: var(--accent-color);
+}
+
+.hero-text p {
+  font-size: 1.7em; /* Texte du héros plus grand */
+  margin-bottom: 50px;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dark-text-on-dark-bg);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* --- Section Fonctionnalités --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(380px, 1fr)
+  ); /* Cartes plus grandes */
+  gap: 45px; /* Plus d'espace */
+}
+
+.feature-card {
+  background-color: var(--white-color);
+  padding: 45px; /* Plus de padding */
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Ombre plus prononcée */
+  text-align: center;
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  border-bottom: 5px solid var(--secondary-color);
+  position: relative;
+  overflow: hidden; /* Pour l'effet de survol */
+}
+
+.feature-card::before {
+  /* Effet de couleur au survol */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  z-index: 0;
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card .icon,
+.feature-card h3,
+.feature-card p {
+  position: relative; /* S'assure que le contenu est au-dessus de l'effet before */
+  z-index: 1;
+  transition: color var(--transition-speed);
+}
+
+.feature-card:hover {
+  transform: translateY(-18px); /* Plus de déplacement */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.feature-card:hover .icon,
+.feature-card:hover h3 {
+  color: var(--white-color); /* Icône et titre blancs au survol */
+}
+
+.feature-card:hover p {
+  color: var(--dark-text-on-dark-bg); /* Texte légèrement clair au survol */
+}
+
+.feature-card .icon {
+  font-size: 4.5em; /* Icônes plus grandes */
+  margin-bottom: 25px;
+  color: var(--accent-color);
+}
+
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 2.1em; /* Titres de cartes plus grands */
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.feature-card p {
+  font-size: 1.15em; /* Texte des cartes plus grand */
+  color: var(--text-color);
+}
+
+/* --- Section Comment ça fonctionne --- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* Étapes plus grandes */
+  gap: 55px; /* Plus d'espace */
+  text-align: center;
+}
+
+.step {
+  padding: 35px;
+  border-radius: var(--border-radius);
+  background-color: var(--white-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  border-left: 5px solid var(--secondary-color);
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.step .number {
+  font-family: var(--font-heading);
+  font-size: 4em; /* Numéros plus grands */
+  color: var(--white-color); /* Numéro en blanc */
+  background-color: var(--primary-color);
+  width: 100px; /* Taille du cercle */
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  border: 5px solid var(--accent-color); /* Bordure en couleur d'accent plus épaisse */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step h3 {
+  font-family: var(--font-heading);
+  font-size: 2em; /* Titres d'étapes plus grands */
+  color: var(--primary-color);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.step p {
+  font-size: 1.15em; /* Texte des étapes plus grand */
+}
+
+/* --- Section Galerie --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /* Images plus grandes */
+  gap: 35px; /* Plus d'espace */
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 380px; /* Hauteur des images de la galerie */
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  cursor: pointer;
+  border: 4px solid var(--secondary-color); /* Bordure colorée plus épaisse */
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.06); /* Plus de zoom */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.mt-4 {
+  margin-top: 55px; /* Plus d'espace */
+}
+
+/* --- Section Témoignages --- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(380px, 1fr)
+  ); /* Témoignages plus grands */
+  gap: 45px;
+}
+
+.testimonial-card {
+  background-color: var(--white-color);
+  padding: 45px; /* Plus de padding */
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  position: relative;
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  border-top: 5px solid var(--primary-color);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 25px;
+  font-size: 1.25em; /* Texte des témoignages plus grand */
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.testimonial-card .author {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 1.15em;
+}
+
+/* --- Section FAQ --- */
+.faq-accordion {
+  max-width: 1000px; /* Plus large */
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: var(--white-color);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  margin-bottom: 22px; /* Plus d'espace */
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+  display: flex; /* Utilise flexbox pour l'alignement icône/texte */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 28px; /* Plus de padding */
+  text-align: left;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 1.5em; /* Question plus grande */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.faq-question::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f078"; /* Chevron down */
+  font-size: 1em;
+  color: var(--secondary-color);
+  transition: transform 0.3s ease;
+  margin-left: 20px; /* Espace entre le texte et l'icône */
+}
+
+.faq-question.active {
+  background-color: var(--light-bg);
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--secondary-color); /* Ligne pour séparer question active */
+}
+
+.faq-question.active::after {
+  content: "\f077"; /* Chevron up */
+  transform: rotate(180deg); /* Rotation pour l'icône */
+}
+
+.faq-answer {
+  padding: 0 28px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; /* Transition plus longue */
+  background-color: #f5f8fb; /* Fond légèrement différent pour la réponse */
+  border-top: 1px dashed #e0e0e0;
+}
+
+.faq-answer p {
+  padding-bottom: 28px; /* Plus de padding */
+  line-height: 1.8;
+  color: var(--text-color);
+  font-size: 1.15em; /* Texte de réponse plus grand */
+}
+
+/* --- Section Contact --- */
+#contact-form {
+  max-width: 850px; /* Plus large */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* Plus d'espace entre les champs */
+  padding: 50px; /* Plus de padding */
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--secondary-color);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 20px; /* Plus de padding */
+  border: 1px solid #cccccc;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 1.15em; /* Taille du texte dans les champs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 5px rgba(0, 51, 102, 0.25); /* Ombre plus visible au focus */
+}
+
+#contact-form textarea {
+  resize: vertical;
+  min-height: 180px; /* Hauteur minimale plus grande */
+}
+
+#contact-form button {
+  width: auto;
+  align-self: flex-start;
+}
+
+.form-response {
+  text-align: center;
+  margin-top: 35px; /* Plus d'espace */
+  font-weight: 700;
+  font-size: 1.3em;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  color: var(--white-color); /* Texte blanc */
+}
+
+.form-response.success {
+  background-color: #28a745;
+}
+
+.form-response.error {
+  background-color: #dc3545;
+}
+
+/* --- Section Télécharger --- */
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin-top: 55px;
+}
+
+.download .availability {
+  font-size: 1.35em; /* Texte plus grand */
+  font-style: italic;
+  color: var(--text-color);
+  margin-top: 15px;
+}
+
+/* Animation de rebond pour le bouton Télécharger */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px); /* Plus de rebond */
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.btn.bounce {
+  animation: bounce 2.8s infinite; /* Animation plus longue */
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(
+    --dark-color
+  ); /* Un bleu nuit encore plus foncé pour le footer */
+  color: var(--white-color);
+  padding: 80px 0 40px;
+  font-size: 1.05em;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Colonnes du footer plus grandes */
+  gap: 45px;
+  margin-bottom: 55px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-heading);
+  font-size: 1.7em; /* Titres du footer plus grands */
+  margin-bottom: 30px;
+  color: var(--accent-color);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 70px; /* Ligne plus large */
+  height: 5px; /* Ligne plus épaisse */
+  background-color: var(--secondary-color);
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 14px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.8); /* Liens légèrement clairs */
+  text-decoration: none;
+  transition: color var(--transition-speed);
+  font-size: 1.08em;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent-color);
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+.footer-col p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.08em;
+  line-height: 1.6;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espace entre l'image et le texte du logo dans le footer */
+}
+
+.footer-logo .logo-image {
+  height: 2.2em; /* Taille du logo image dans le footer */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-logo .logo-text {
+  font-family: var(--font-heading);
+  font-size: 2.2em; /* Taille du texte "Pic Fusion" dans le footer */
+  font-weight: 700;
+  color: var(--white-color);
+}
+
+.footer-social .social-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px; /* Icônes plus grandes */
+  height: 48px;
+  background-color: var(--secondary-color);
+  margin-right: 15px;
+  border-radius: 50%;
+  color: var(--white-color);
+  font-size: 1.5em; /* Taille des icônes */
+  transition: background-color var(--transition-speed),
+    transform var(--transition-speed);
+}
+
+.footer-social .social-links a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-5px) scale(1.05); /* Plus de déplacement et léger zoom */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 40px;
+  margin-top: 45px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1em;
+}
+
+/* --- Animations au défilement (Scroll Reveal) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(100px); /* Plus de déplacement initial */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Animation plus lente et douce */
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s; /* Délai plus long */
+}
+
+.reveal-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 25px; /* Légèrement plus que 20px pour ces résolutions intermédiaires */
+  }
+  .section-title {
+    font-size: 3.2em;
+  }
+  .section-description {
+    font-size: 1.25em;
+  }
+  .hero-text h1 {
+    font-size: 4.5em;
+  }
+  .hero-text p {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    padding: 25px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    padding: 12px 0;
+    font-size: 1.35em; /* Liens mobile plus grands */
+  }
+
+  .nav-links a::after {
+    /* Supprime le soulignement sur mobile */
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar .logo {
+    height: 35px; /* Ajuste la hauteur du logo sur mobile */
+  }
+
+  .navbar .logo-text {
+    font-size: 2.2em;
+  }
+
+  .hero-text h1 {
+    font-size: 3.8em;
+  }
+
+  .hero-text p {
+    font-size: 1.4em;
+  }
+
+  .section-title {
+    font-size: 2.8em;
+  }
+
+  .section-description {
+    font-size: 1.15em;
+  }
+
+  .features-grid,
+  .steps,
+  .gallery-grid,
+  .testimonial-grid,
+  .footer-content {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Ajustement pour tablettes */
+    gap: 35px;
+  }
+
+  .feature-card,
+  .step,
+  .testimonial-card,
+  .faq-item {
+    padding: 35px;
+  }
+
+  .faq-question {
+    font-size: 1.4em;
+  }
+
+  .faq-answer p {
+    font-size: 1.1em;
+  }
+
+  #contact-form {
+    padding: 40px;
+  }
+
+  footer {
+    padding: 70px 0 35px;
+  }
+
+  .footer-col h4 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.05em; /* Réduit la taille de base pour les mobiles */
+  }
+  .hero {
+    margin-top: 70px;
+  }
+
+  .hero-bg-left,
+  .hero-bg-right {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(
+      100% - var(--global-padding-x) * 2
+    ); /* Prend en compte le padding global */
+    padding: 35px;
+  }
+
+  .hero-text h1 {
+    font-size: 3.2em;
+  }
+
+  .hero-text p {
+    font-size: 1.3em;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 28px; /* Ajuste le padding des boutons sur mobile */
+    font-size: 1.1em;
+  }
+  .btn.large {
+    padding: 18px 35px;
+    font-size: 1.3em;
+  }
+
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 2.5em;
+  }
+
+  .section-description {
+    font-size: 1.05em;
+    margin-bottom: 50px;
+  }
+
+  .feature-card .icon {
+    font-size: 4em;
+  }
+  .feature-card h3 {
+    font-size: 1.8em;
+  }
+  .feature-card p {
+    font-size: 1.05em;
+  }
+
+  .step .number {
+    font-size: 3.5em;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+  }
+  .step h3 {
+    font-size: 1.6em;
+  }
+  .step p {
+    font-size: 1.05em;
+  }
+
+  .gallery-grid img {
+    height: 320px;
+  }
+  .testimonial-card p {
+    font-size: 1.15em;
+  }
+  .testimonial-card .author {
+    font-size: 1.05em;
+  }
+
+  .faq-question {
+    font-size: 1.3em;
+    padding: 25px;
+  }
+  .faq-answer p {
+    font-size: 1.05em;
+  }
+
+  #contact-form {
+    padding: 35px;
+  }
+
+  footer {
+    padding: 60px 0 30px;
+  }
+
+  .footer-col h4 {
+    font-size: 1.4em;
+  }
+  .footer-col ul li a,
+  .footer-col p {
+    font-size: 1em;
+  }
+  .footer-social .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3em;
+  }
+  .footer-logo .logo-image {
+    height: 2em;
+  }
+  .footer-logo .logo-text {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo-text {
+    font-size: 2em;
+  }
+  .menu-toggle {
+    font-size: 2em;
+  }
+  .hero-text h1 {
+    font-size: 2.8em;
+  }
+  .hero-text p {
+    font-size: 1.2em;
+  }
+  .section-title {
+    font-size: 2.3em;
+    margin-bottom: 25px;
+  }
+  .section-title i {
+    margin-right: 10px;
+    font-size: 1em;
+  }
+  .section-description {
+    font-size: 0.95em;
+  }
+
+  .features-grid,
+  .steps,
+  .gallery-grid,
+  .testimonial-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 280px;
+  }
+
+  .step .number {
+    font-size: 3em;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+
+  .faq-question {
+    padding: 20px;
+    font-size: 1.2em;
+  }
+  .faq-answer p {
+    font-size: 1em;
+  }
+
+  #contact-form {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    padding: 16px;
+    font-size: 1em;
+  }
+  #contact-form textarea {
+    min-height: 150px;
+  }
+  .form-response {
+    font-size: 1.1em;
+  }
+
+  footer {
+    padding: 50px 0 25px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.2em;
+  }
+  .footer-logo .logo-image {
+    height: 1.8em;
+  }
+  .footer-logo .logo-text {
+    font-size: 1.8em;
+  }
+}
